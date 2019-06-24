@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" >
+
+        <link rel="stylesheet" href="./resources/css/index.css">
+
+    <title>plansformyday</title>
+
+  </head>
+  <body>
+
+    <h1 id="title">To Do Tracker</h1>
+<form class="one" action="nodes.html" method="post">
+<input type="text" id="input" value="for users">
+</form>
+
+
+<h2 id="plans">To Do Today</h2>
+    <ul ></ul>
+
+    <button id="but" type="button" >reset</button>
+
+
+    <script type="master.js">
+
+    document.querySelector('form');
+    var formone=document.querySelector('form');
+
+    document.querySelector('#input');
+    var inputfill = document.querySelector('#input');
+
+    formone.addEventListener('submit', function(e){
+      e.preventDefault();
+      todomaker(inputfill.value);
+      inputfill.value='';
+    });
+
+    document.querySelector('ul');
+    var todaytodo = document.querySelector('ul');
+var todomaker=function(text){
+
+  var todo = document.createElement('li');
+
+    todo.textContent=text;
+
+    todaytodo.appendChild(todo);
+  };
+
+  //section for reset button//
+  document.querySelector('ul');
+  var todaytodo = document.querySelector('ul');
+
+  document.getElementById('but');
+  var resetbutton=document.getElementById('but');
+  resetbutton.addEventListener('click',function(){
+    while(todaytodo.firstChild){
+    todaytodo.removeChild(todaytodo.firstChild);
+  }
+  });
+
+
+//local storage version//
+
+var todoArray=[]
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
